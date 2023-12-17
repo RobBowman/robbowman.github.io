@@ -1,3 +1,10 @@
+---
+title: Happy BizTalk!
+category: BizTalk
+tags:
+    - BizTalk
+    - PowerShell
+---
 # Simple PowerShell BizTalk Status Report
 Have you ever felt the need to check all BizTalk ports and hosts instances are running before you leave work each day? If you don't have the budget for the excellent [BizTalk360](http://www.biztalk360.com), then a little scripting and the wonderful [BizTalk Powershell Provider](https://psbiztalk.codeplex.com/) could be just what you're looking for!
 
