@@ -1,0 +1,15 @@
+# Functoid not Found
+## There Must be a Better Way
+I'm hoping I've overlooked something here but I've hit a problem, for which I can't find a happy work-around.
+
+I'm using VSTS for my CI solution. Each commit, the BizTalk apps are fetched to a dedicated build server, compiled and the unit tests are executed.
+
+I don't want any of my BizTalk solution assemblies to find their way into the GAC on the build server because it seems BizTalk projects will use these, rather than project references.
+
+The problem comes when the build agent attempts to build a solution that contain a custom functoids project, I get the following error:
+
+> Functoid not found: guid (1d5de785-c639-4040-9704-c65a11127115) with functoid id (6003). Check if the assembly implementing this functoid is present in D:\Program Files (x86)\Microsoft BizTalk Server 2013 R2\Developer Tools\Mapper Extensions. If the functoid does not expose any inline code, make sure its assembly is made available in the GAC also
+
+So, the functoid assembly needs to be in the GAC? Trouble is, that references a common.components assembly which means that will also need to be GAC'd, which puts me right back in the place I don't want to be! This is a problem because the next time the build agent tries to build a project with a reference to common.components, it will use the "old" version that happens to be kicking around in the GAC, rather that the latest version just pulled from the repo and sat alongside the dependent project in the same solution.
+
+If anyone else has hit the same problem, I'd love to hear from you.

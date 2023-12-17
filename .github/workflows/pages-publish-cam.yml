@@ -1,0 +1,23 @@
+name: pages publish cam
+
+on:
+  push:
+    branches:
+      - cam
+
+  workflow_dispatch:
+
+jobs:
+  queue-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Queue Pages Build
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: https://api.github.com/repos/robbowman/robbowman.github.io/pages/builds
+          method: POST
+          customHeaders: |
+            {
+              "Accept": "application/vnd.github.ant-man-preview+json", 
+              "Authorization": "token ${{secrets.PAGES_BUILD_TOKEN}}"
+            }
