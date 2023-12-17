@@ -13,7 +13,7 @@ jobs:
       - name: Queue Pages Build
         uses: fjogeleit/http-request-action@v1
         with:
-          url: https://api.github.com/repos/robbowman/robbowman.github.io/pages/builds
+          url: https://api.github.com/repos/robbowman/robbowman.github.io/az-blog/pages/builds
           method: POST
           customHeaders: |
             {

@@ -17,7 +17,7 @@ To add the comment block, I simply pasted the following at the foot of my markdo
 
 ````
 <script src="https://utteranc.es/client.js"
-    repo="RobBowman/RobBowman.github.io"
+    repo="RobBowman/RobBowman.github.io/az-blog"
     issue-term="pathname"
     theme="github-light"
     crossorigin="anonymous"

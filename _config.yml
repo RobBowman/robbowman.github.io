@@ -22,8 +22,8 @@
 title: Cloud Adventures
 description: >- # this means to ignore newlines until "baseurl:"
   My problems and solutions to cloud integration, containerisation and devops
-url: https://robbowman.github.io
-repository: robbowman/robbowman.github.io
+url: https://robbowman.github.io/az-blog
+repository: robbowman/az-blog
 
 # Social Profile
 github_username: robbowman
@@ -61,10 +61,10 @@ author:
   links:
     - label: Website
       icon: fas fa-globe-europe
-      url: https://robbowman.github.io
+      url: https://robbowman.github.io/az-blog
     - label: GitHub
       icon: fab fa-fw fa-github
-      url: https://github.com/robbowman
+      url: https://github.com/robbowman/az-blog
 
 # Comments
 comments:
