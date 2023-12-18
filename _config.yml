@@ -31,7 +31,7 @@ github_username: robbowman
 # Build settings
 # theme: jekyll-theme-clean-blog
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: dark
+minimal_mistakes_skin: sunrise
 breadcrumbs: true
 search: true
 include:
