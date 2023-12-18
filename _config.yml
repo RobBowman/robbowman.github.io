@@ -22,8 +22,8 @@
 title: BizTalkers.com | Integration Azured
 description: >- # this means to ignore newlines until "baseurl:"
   My problems and solutions to cloud integration, containerisation and devops
-url: https://robbowman.github.io/az-blog
-repository: robbowman/az-blog
+url: https://robbowman.github.io
+repository: robbowman
 
 # Social Profile
 github_username: robbowman
