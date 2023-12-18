@@ -1,4 +1,11 @@
-# Automatically Publishing Azure Functions into Apim
+---
+title: Auto Publishing Azure Functions into Apim
+category: Azure
+tags:
+    - Azure
+    - APIM
+---
+# Automatically Publishing Azure Functions into APIM
 
 ## Acknowledgement
 I'd like to start by saying I was able to find answers to several problem in an excellent [blog post](https://devkimchi.com/2022/03/02/publishing-openapi-doc-from-azfunc-to-apim-within-cicd-pipeline/) from Justin Yoo.

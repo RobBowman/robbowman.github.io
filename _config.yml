@@ -46,10 +46,10 @@ plugins:
   - jemoji
 
 # Analytics
-# analytics:
-#   provider: "google-gtag"
-#   google:
-#     tracking_id: "G-PG8RL37BBN"
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-65263073-1"
 
 # Site Author
 author:

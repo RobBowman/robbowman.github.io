@@ -1,3 +1,9 @@
+---
+title: BizTalk Smoke Testing
+category: BizTalk
+tags:
+    - BizTalk
+---
 # BizTalk Smoke Testing
 After building a new BizTalk environment it can be helpful to run a few simple tests to check all is good. 
 

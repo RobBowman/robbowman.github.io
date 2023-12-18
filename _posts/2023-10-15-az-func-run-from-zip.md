@@ -1,3 +1,10 @@
+---
+title: Azure Function WEBSITE_RUN_FROM_PACKAGE
+category: Azure
+tags:
+    - Azure
+    - DevOps
+---
 # Azure Function WEBSITE_RUN_FROM_PACKAGE
 Over the years there have been multiple ways to host Azure Functions. My current preference is to host on a linux app service plan. The purpose of this post is to describe configuration I've found to be optimal for building and deploying azure function code into such an app.
 

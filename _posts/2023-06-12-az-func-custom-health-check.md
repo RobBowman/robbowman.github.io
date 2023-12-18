@@ -1,3 +1,10 @@
+---
+title: Dotnet-Isolated Azure Function Custom Health Check
+category: Azure
+tags:
+    - Azure
+    - Azure Functions
+---
 # Adding Custom Health Check to Dotnet-Isolated Azure Functions
 Azure function apps give the options to enable health checks. An overview and description of benefits of these can be found [here](https://learn.microsoft.com/en-us/azure/app-service/monitor-instances-health-check?tabs=dotnet)
 

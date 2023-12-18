@@ -1,3 +1,9 @@
+---
+title: BizTalk Naming Conventions
+category: BizTalk
+tags:
+    - BizTalk
+---
 # BizTalk Naming Conventions
 Naming of BizTalk stuff is no different than for any programming language. It's helpful if multiple developers on the same project use consistent terms. I've had a preference to how things like receive and send ports are named for years but I've never written them down - until now!
 

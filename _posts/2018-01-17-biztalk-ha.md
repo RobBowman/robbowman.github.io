@@ -1,3 +1,10 @@
+---
+title: Biztalk 2016 High Availability Config
+category: BizTalk
+tags:
+    - BizTalk
+    - Sql Server
+---
 # BizTalk 2016 High Availability Config
 I was recently faced with creating a new on-prem production environment for BizTalk 2016. New to me for this install was that high-availability (HA) of the BizTalk databases had to be enabled using Sql Server 2016 Always On Availability Groups.
 

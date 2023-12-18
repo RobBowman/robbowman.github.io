@@ -1,3 +1,9 @@
+---
+title: Azure Service Endpoints
+category: Azure
+tags:
+    - Azure
+---
 # Azure Service Endpoints
 
 ## Puzzle

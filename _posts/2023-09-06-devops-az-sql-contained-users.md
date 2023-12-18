@@ -1,3 +1,11 @@
+---
+title: Automating Creation of Az Sql Contained USers
+category: Azure
+tags:
+    - Azure
+    - DevOps
+    - Sql Server
+---
 # Automating Creation of Az Sql Contained Users
 I have an Azure Function app called sms-router that uses an Azure Sql Database. This means it needs permission onto the database. Creating contined users manually requires a simple t-sql statement such as:
 

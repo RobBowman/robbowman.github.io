@@ -1,3 +1,10 @@
+---
+title: Updating Resources Outside Target Resource Group
+category: Azure
+tags:
+    - Azure
+    - Bicep
+---
 # Updating Resources Outside Target Resource Group
 The way this is achieved is a little strange and although I've implemented several times, I always forget!
 

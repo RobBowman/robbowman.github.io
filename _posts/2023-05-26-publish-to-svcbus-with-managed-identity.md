@@ -1,3 +1,10 @@
+---
+title: Publishing Multiple Messages tp Service Bus with Managed Identity
+category: Azure
+tags:
+    - Azure
+    - Service Bus
+---
 # Publishing Multiple Messages to Service Bus with Managed Identity
 I ran into a problem with the service bus binding for Azure functions this week.
 

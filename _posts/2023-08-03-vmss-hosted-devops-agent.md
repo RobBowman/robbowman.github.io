@@ -1,3 +1,10 @@
+---
+title: Hosting Azure DevOps Agents on a VMSS
+category: Azure
+tags:
+    - Azure
+    - DevOps
+---
 # Hosting Azure DevOps Agents on a VMSS
 The only time I'd previously had to veer from using Microsoft's hosted build agent was for building "unusual" things like BizTalk applications. However, I've recently started a move to ASEv3 (Application Service Environment) for hosting app services. For this, the standard hosted agents won't work because they don't have connectivity to an Isolated App Service Plan of an ASE.
 

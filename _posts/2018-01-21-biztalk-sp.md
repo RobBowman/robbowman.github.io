@@ -1,3 +1,10 @@
+---
+title: Calling a Stored Proc from BizTalk without an Orchestration
+category: BizTalk
+tags:
+    - BizTalk
+	- SQL Server
+---
 # Calling a Stored Proc from BizTalk without Orchestration
 
 Earlier this week, I had to call a stored procedure from a simple BizTalk 2016 applicaition. The stored procedure expected to receive 7 parameters, each of which would be available in the BizTalk message.

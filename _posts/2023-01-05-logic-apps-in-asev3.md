@@ -1,3 +1,11 @@
+---
+title: Logic Apps in ASEv3
+category: Azure
+tags:
+    - Azure
+    - Logic Apps
+    - ASEv3
+---
 # Using the Built-In File Connector for On-Prem Files
 Previously, we'd been accessing on-prem files from logic apps via the on-prem data gateway, as illustrated below:
 

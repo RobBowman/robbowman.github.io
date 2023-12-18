@@ -1,3 +1,9 @@
+---
+title: Biztalk Orchestraion Delivery Notification
+category: BizTalk
+tags:
+    - BizTalk
+---
 # BizTalk Orchestration Delivery Notifcation
 I ran into an interesting problem last week. Sends to a third-party via the FTP adapter were failing. Nothing particularly interesting in that, the cause was some configuration on one of the firewalls. However, my client's support team only became aware of the problem when the third-party had called them to ask why they hadn't received any messages that day - not good!
 

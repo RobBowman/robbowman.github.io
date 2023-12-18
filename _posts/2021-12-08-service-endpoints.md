@@ -1,4 +1,10 @@
-# Azure Service Endpoint - Staus Disabled
+---
+title: Azure Service Endpoint - Status Disabled
+category: Azure
+tags:
+    - Azure
+---
+# Azure Service Endpoint - Status Disabled
 I had a vnet that looked like this:
 
 ![vnet](/images/service-endpoints/vnet.png)

@@ -1,3 +1,10 @@
+---
+title: APIM IP Address
+category: Azure
+tags:
+    - Azure
+    - APIM
+---
 # Figuring Out the IP Address of Your Azure Function and API Management Policy
 ## Background
 I recently created an Azure Function app that's triggered by an Http request. It then calls out to a 3rd party api but before doing so, it must first obtain a token from their token server. For the token acquisition and management, I created an apim policy, that uses *send-request*. 

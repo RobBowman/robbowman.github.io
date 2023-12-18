@@ -1,3 +1,9 @@
+---
+title: Biztalk 2016 sFTP
+category: BizTalk
+tags:
+    - BizTalk
+---
 # BizTalk 2016 sFTP 
 I recently worked on a project that required BizTalk to collect files from a 3rd party's server using the SFTP adapter. I've had to do this many times over the years but each time I've had to refer back to my notes. Also, the process for current versions has changed a little recently, so I thought the subject worthy of a new blog post.
 

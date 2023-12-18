@@ -1,3 +1,10 @@
+---
+title: BizTalk CI/CD
+category: BizTalk
+tags:
+    - BizTalk
+    - CI/CD
+---
 # BizTalk CI/CD
 ## Background
 In this post I'd like to describe a BizTalk build process I recently developed for a client and their BizTalk 2013(r1) applications. Up until recently, they had used an on-premise installation of TFS 2012 for all their ALM needs. However, by the time I was engaged, they had migrated their source code into Azure TFS, aka Visual Studio Online (VSO). 

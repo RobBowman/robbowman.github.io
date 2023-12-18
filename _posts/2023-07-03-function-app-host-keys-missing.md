@@ -1,3 +1,10 @@
+---
+title: Missing Host Keys in Azure Function App
+category: Azure
+tags:
+    - Azure
+    - Azure Functions
+---
 # Missing Host Keys in Azure Function App
 I ran into a problem with deployment of a function app a couple of weeks ago. I thought I'd share the solution here in case anyone else runs into the same problem.
 

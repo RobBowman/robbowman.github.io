@@ -1,3 +1,9 @@
+---
+title: AzureWebJobsAzureWebJobStorageDoesNotExist
+category: Azure
+tags:
+    - Azure
+---
 # 'AzureWebJobsAzureWebJobsStorage' does not exist
 
 I created a new azure function app today, which I deployed to a dev azure subscription through a devops pipeline. I tested it via an http request and received a 500 error response. 

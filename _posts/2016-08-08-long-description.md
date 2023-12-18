@@ -1,3 +1,10 @@
+---
+title: ESB Exception 256
+category: BizTalk
+tags:
+    - BizTalk
+    - ESB Toolkit
+---
 # ESB Exception Framework and Description 256 Length Problem
 Users of the ESB Exception Toolkit may be familiar with the exception:
 >The property "Description" has a value with length greater than 256 characters

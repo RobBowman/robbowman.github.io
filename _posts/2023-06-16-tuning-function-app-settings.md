@@ -1,3 +1,10 @@
+---
+title: Tuning Azure Functions App Settings
+category: Azure
+tags:
+    - Azure
+    - Azure Functions
+---
 # Tuning Azure Function App Settings
 I would admit to being guilty of accepting some default function app settings without really considering what they're for. This post describes some of useful settings that I'd miss understood.
 

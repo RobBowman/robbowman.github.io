@@ -1,3 +1,10 @@
+---
+title: Fiddler and BizTalk with a Corp Proxy
+category: BizTalk
+tags:
+    - BizTalk
+    - Fiddler
+---
 # Fiddler and BizTalk with a Corp Proxy
 I've been having fun integrating BizTalk with an external rest style api this week. When things don't work as expected, it's great to be able to see the traffic in Fiddler. Postman has a really nice user interface for working with apis and so, before configuring the BizTalk send ports for the api, I've found exploring it by firing tests from Postman while monitoring through Fiddler to be really helpful. However, when working behind a corporate proxy there's usually extra config required to make this possible.
 

@@ -1,3 +1,10 @@
+---
+title: Calling BizTalk from Azure
+category: BizTalk
+tags:
+    - BizTalk
+    - Azure
+---
 # Calling BizTalk from Azure
 ## Phone Home
 I've been working on a project that has a .Net Core MVC front end deployed as an Azure Web App. This needs to request data that's currently available from an on-prem BizTalk 2016 environment.

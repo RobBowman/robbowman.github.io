@@ -1,3 +1,10 @@
+---
+title: APIM Deployment
+category: Azure
+tags:
+    - Azure
+    - APIM
+---
 # Automating Deployment of Azure API Management Requiring App Registrations 
 
 ## Overview

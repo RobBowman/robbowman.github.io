@@ -1,3 +1,10 @@
+---
+title: Logs Missing from local Az Functions
+category: Azure
+tags:
+    - Azure
+    - Azure Functions
+---
 # Logs Missing from Local Az Functions
 I created a new Durable Functions project recently and noticed my logs weren't appearing in the console window when running from Visual Studio.
 

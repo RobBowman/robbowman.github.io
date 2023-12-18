@@ -1,3 +1,10 @@
+---
+title: BizTalk DateTime vs Oracle
+category: BizTalk
+tags:
+    - BizTalk
+    - Oracle
+---
 # BizTalk DateTime vs Oracle
 I have an orchestration that received a data file and inserted contents into an Oracle database as part of its processing.
 

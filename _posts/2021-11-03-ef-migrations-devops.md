@@ -1,3 +1,10 @@
+---
+title: EF Migrations with DevOps
+category: DevOps
+tags:
+    - Azure
+    - DevOps
+---
 # EF Migrations with DevOps
 ## Intro
 Entity Framework migrations have been around for a long time, so I won't go into detail on what they're for, other than to say solve a difficult problem:

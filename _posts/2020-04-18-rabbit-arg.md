@@ -1,3 +1,9 @@
+---
+title: RabbitMQ Inequivalent Arg Error
+category: RabbitMQ
+tags:
+    - RabbitMQ
+---
 # Rabbit MQ Inequivalent Arg Error
 I have an Azure function that's making use of the new(ish) RabbitMQ binding to collect messages. This binding (https://github.com/Azure/azure-functions-rabbitmq-extension) works well but at time of writing has a few limitations; one of which is that it cannot collect from "durable" queues.
 

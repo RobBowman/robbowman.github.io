@@ -1,3 +1,9 @@
+---
+title: Zero to Cloud
+category: Azure
+tags:
+    - Azure
+---
 # Zero to Cloud
 I have dabbled with Azure over the past few years now but this has been mainly as a host to a simple websites with a sql db layer. I've been meaning to investigate what else Azure has to offer but never managed to find the time. So, when a few weeks ago I heard about a course to coach through building and deploying an app to Azure in one day, I signed up - [Zero to cloud in 1 day](http://theazurecoach.com/courses/zero-to-cloud-in-1-day/)
 

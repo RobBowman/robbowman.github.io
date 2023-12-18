@@ -1,3 +1,9 @@
+---
+title: Publishing Website for BizTalk
+category: BizTalk
+tags:
+    - BizTalk
+---
 # Publishing Website for BizTalk
 
 I built a new solution today that used the BizTalk deployment framework to deploy everything - including a WCF service into IIS.

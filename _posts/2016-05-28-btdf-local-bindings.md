@@ -1,3 +1,10 @@
+---
+title: Biztalk Deployment Framework - Local Bindings
+category: BTDF
+tags:
+    - BizTalk
+    - BTDF
+---
 # Biztalk Deployment Framework - Local Bindings
 For new BizTalk solutions I use the BizTalk Deployment Framework (BTDF). In the early stages of development, I find that I run through the following cycle very frequently:
 

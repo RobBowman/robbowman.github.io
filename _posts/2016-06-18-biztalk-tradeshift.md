@@ -1,3 +1,9 @@
+---
+title: Biztalk and Tradeshift
+category: BizTalk
+tags:
+    - BizTalk
+---
 # BizTalk and Tradeshift
 Tradeshift is as cloud based service to enable companies to exchange business documents such as purchase orders and invoices more easily.
 

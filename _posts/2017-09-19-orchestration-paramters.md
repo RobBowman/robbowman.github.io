@@ -1,3 +1,9 @@
+---
+title: Orchestration Woes
+category: BizTalk
+tags:
+    - BizTalk
+---
 # Orchestration Woes
 I hit a problem with BTS2013r2 orchestration that I don't remember coming across previously.
 
