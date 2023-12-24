@@ -3,7 +3,7 @@ title: Calling a Stored Proc from BizTalk without an Orchestration
 category: BizTalk
 tags:
     - BizTalk
-	- SQL Server
+    - Sql Server
 ---
 # Calling a Stored Proc from BizTalk without Orchestration
 

@@ -3,7 +3,7 @@ title: BTDF Gotcha!
 category: BTDF
 tags:
     - BizTalk
-    = BTDF
+    - BTDF
 ---
 # BTDF Gotcha!
 Everyone knows that the BizTalk Deployment Framework is the best thing since sliced bread but BizTalk deployment is a complex thing and I still run into issues. I've decided to record here each time I bump into a new on.

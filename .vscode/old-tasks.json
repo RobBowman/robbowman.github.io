@@ -1,0 +1,75 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Bundle: Install",
+            "group": "build",
+            "type": "shell",
+            "command": "bundle",
+            "args": ["install"],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "clear": true,
+                "close": true
+            }
+        },
+        {
+            "label": "Jekyll: Serve",
+            "group": "build",
+            "type": "shell",
+            "command": "bundle",
+            "args": [
+                "exec", 
+                "jekyll", 
+                "serve",
+                "--livereload",
+                "--incremental",
+                "--force_polling",
+                "--drafts",
+                "--future"
+            ],
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "clear": true,
+                "close": true
+            }
+        },
+        {
+            "label": "Jekyll: Serve Production",
+            "group": "build",
+            "type": "shell",
+            "command": "bundle",
+            "args": [
+                "exec", 
+                "jekyll", 
+                "serve",
+                "--livereload",
+                "--force_polling",
+                "--drafts"
+            ],
+            "options": {
+                "env": {
+                    "JEKYLL_ENV": "production"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "clear": true,
+                "close": true
+            }
+        }
+    ]
+}

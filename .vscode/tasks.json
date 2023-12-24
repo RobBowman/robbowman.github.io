@@ -1,30 +1,35 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
             "label": "Bundle: Install",
-            "group": "build",
             "type": "shell",
             "command": "bundle",
             "args": ["install"],
-            "problemMatcher": [],
             "presentation": {
                 "reveal": "always",
-                "revealProblems": "onProblem",
-                "clear": true,
-                "close": true
+                "focus": true,
+                "panel": "shared",
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "shell": {
+                    "executable": "/bin/zsh",
+                    "args": ["-l"]
+                }
             }
         },
         {
             "label": "Jekyll: Serve",
-            "group": "build",
             "type": "shell",
             "command": "bundle",
             "args": [
-                "exec", 
-                "jekyll", 
+                "exec",
+                "jekyll",
                 "serve",
                 "--livereload",
                 "--incremental",
@@ -33,42 +38,26 @@
                 "--future"
             ],
             "isBackground": true,
-            "runOptions": {
-                "runOn": "folderOpen"
-            },
-            "problemMatcher": [],
             "presentation": {
                 "reveal": "always",
-                "revealProblems": "onProblem",
-                "clear": true,
-                "close": true
-            }
-        },
-        {
-            "label": "Jekyll: Serve Production",
-            "group": "build",
-            "type": "shell",
-            "command": "bundle",
-            "args": [
-                "exec", 
-                "jekyll", 
-                "serve",
-                "--livereload",
-                "--force_polling",
-                "--drafts"
-            ],
-            "options": {
-                "env": {
-                    "JEKYLL_ENV": "production"
+                "focus": true,
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": {
+                "owner": "ruby",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "^.+:[0-9]+:in `.+': (.+) \\((.+)\\)$",
+                    "message": 1,
+                    "severity": 2
                 }
             },
-            "isBackground": true,
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "always",
-                "revealProblems": "onProblem",
-                "clear": true,
-                "close": true
+            "options": {
+                "shell": {
+                    "executable": "/bin/zsh",
+                    "args": ["-l"]
+                }
             }
         }
     ]
