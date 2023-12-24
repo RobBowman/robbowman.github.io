@@ -6,7 +6,7 @@ tags:
     - Sql Server
     - Cosmos
 ---
-# Migrating XXX from Table Storage to Cosmos DB Table Api
+# Migrating from Table Storage to Cosmos DB Table Api
 I recently worked on an Azure Function App that was using Table Storage to persist data. Table storage is an obvious choice for Azure Function Apps since:
 
 + already have a storage account 
