@@ -151,3 +151,104 @@ This is shown in the following example:
 </policies>
 ```
 Note: Cache policies are only effective on APIM SKUs **above** “Consumption”
+
+# Loading the Data into Cosmos DB
+We need a script that can be run from a DevOps pipeline to load the static data from JSON files into the database.
+
+## Sample Data
+The data file must be made available to the PowerShell script
+
+```json
+[
+    {
+        "id": "Goose",
+        "French": "Oie",
+        "German": "Gans",
+        "species": "Bird"
+    },
+    {
+        "id": "Badger",
+        "French": "blaireau",
+        "German": "Dachs",
+        "species": "Mammal"
+    }
+]
+```
+
+## PowerShell Script:
+```powershell
+# Connect-AzAccount
+# $subscription = Get-AzSubscription -SubscriptionName "Azure Free Trial"
+# Set-AzContext -Subscription $subscription
+
+$data = Get-Content '.\sample-data-3.json' | ConvertFrom-Json
+
+$accountName = "cosmos-sandpit-dev-01"
+$databaseName = "ReferenceData"
+$containerName = "Container2"
+$resourceGroupName = "rg-sandpit"
+
+# Import CosmosDB module
+$moduleName = "CosmosDB"
+Import-Module $moduleName -ErrorAction Stop
+
+$cosmosDbContext = New-CosmosDbContext -Account $accountName -Database $databaseName -ResourceGroup $resourceGroupName
+
+foreach ($item in $data) {
+    # Ensure that each item has a unique 'id'
+    $item | Add-Member -Type NoteProperty -Name 'id' -Value ($item.domain + '-' + $item.concept)
+
+    # Make sure the Domain field is present
+    $domain = $item.domain
+    if ($null -eq $domain) {
+        Write-Host "Domain field is missing in the item with id: $($item.id)"
+        continue
+    }
+
+    # Since we are using 'Domain' as the partition key, ensure it is present at the root level of the document
+    $document = $item | ConvertTo-Json
+
+    try {
+        # Insert the document into the container
+        New-CosmosDbDocument -Context $cosmosDbContext -CollectionId $containerName -DocumentBody $document -PartitionKey $domain
+    } catch {
+        Write-Host "Error inserting document with id $($item.id): $_"
+    }
+}
+```
+
+# Addendum
+The example policy given above works well when a single value is required to idetify the required database entity.
+
+It is also possible to create an APIM policy that makes use to Cosmos' Powerfull Sql Query capability by composing a Sql expression to be POSTED to cosmos in the message body.
+
+```xml
+<!-- Compose Cosmos DB query -->
+<set-variable name="domain" value="@{ return context.Request.MatchedParameters["domain"]; }" />
+<set-variable name="cosmosQuery" value="@{
+    string domain = context.Variables.GetValueOrDefault<string>("domain");
+    string concept = context.Request.MatchedParameters["concept"];
+    return "{ \"query\": \"SELECT * FROM c WHERE c.domain = '" + domain + "' AND c.concept = '" + concept + "'\" }";
+}" />
+<!-- Set the composed query as the message body -->
+<set-body>@(context.Variables.GetValueOrDefault<string>("cosmosQuery"))</set-body>
+<!-- Set the partition key header -->
+<set-header name="x-ms-documentdb-partitionkey" exists-action="override">
+    <value>@{ return "[\"" + context.Variables.GetValueOrDefault<string>("domain") + "\"]"; }</value>
+</set-header>
+<set-method>POST</set-method>
+<set-header name="Content-Type" exists-action="override">
+    <value>application/query+json</value>
+</set-header>
+<cache-lookup vary-by-developer="false" vary-by-developer-groups="false" downstream-caching-type="none" must-revalidate="true" caching-type="internal" >
+    <vary-by-query-parameter>version</vary-by-query-parameter>
+</cache-lookup>
+```
+
+For the above policy, a client would request data with a url such as:
+
+https://my-apim/ref-data/domains/CRM/concepts/CurrencyTypes 
+
+Note: the url template for the api would be:
+
+/ref-data-3/domains/{domain}/concepts/{concept}
