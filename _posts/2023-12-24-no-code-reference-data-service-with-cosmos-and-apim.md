@@ -175,7 +175,7 @@ The data file must be made available to the PowerShell script
 ]
 ```
 
-## PowerShell Script:
+## PowerShell Script
 ```powershell
 # Connect-AzAccount
 # $subscription = Get-AzSubscription -SubscriptionName "Azure Free Trial"
