@@ -1,5 +1,5 @@
 ---
-title: Publishing Multiple Messages tp Service Bus with Managed Identity
+title: Publishing Multiple Messages to Service Bus with Managed Identity
 category: Azure
 tags:
     - Azure

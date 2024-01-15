@@ -1,5 +1,5 @@
 ---
-title: Automating Creation of Az Sql Contained USers
+title: Automating Creation of Az Sql Contained Users
 category: Azure
 tags:
     - Azure
