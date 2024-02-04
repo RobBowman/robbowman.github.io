@@ -9,10 +9,16 @@ tags:
 Over the years there have been multiple ways to host Azure Functions. My current preference is to host on a linux app service plan. The purpose of this post is to describe configuration I've found to be optimal for building and deploying azure function code into such an app.
 
 ## Microsoft Documentation
-[This page](https://learn.microsoft.com/en-us/azure/azure-functions/run-functions-from-deployment-package) describes the benfits of running the azure function from a package file (zip)
+[This page](https://learn.microsoft.com/en-us/azure/azure-functions/run-functions-from-deployment-package) describes the benefits of running the azure function from a package file (zip)
+
+## Consumption Gotcha
+If deploying to a consumption or elastic premium plan, additional app settings are required:
+
+- WEBSITE_CONTENTAZUREFILECONNECTIONSTRING
+- WEBSITE_CONTENTSHARE
 
 ## Working Pipeline
-The following is two-stage devops pipeline, the first stage:
+The following is two-stage devops pipeline for a **dedicated** app service plan, the first stage:
 
 + build the app
 + published the compiled binaries to a /publish folder (default behaviour of dotnet publish)
@@ -20,7 +26,7 @@ The following is two-stage devops pipeline, the first stage:
 
 The second stage:
 
-+ downloads the content of the pipeline archive (default vbehaviour of deployment task)
++ downloads the content of the pipeline archive (default behaviour of deployment task)
 + deploys to function app
 
 ```yaml
