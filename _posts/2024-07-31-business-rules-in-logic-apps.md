@@ -3,6 +3,7 @@ title: Hosting Business Rules Engine (BRE) in Logic Apps Standard
 category: Azure
 tags:
     - Logic Apps
+    - BizTalk
 ---
 
 ## Overview
