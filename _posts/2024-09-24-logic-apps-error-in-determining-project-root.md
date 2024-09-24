@@ -19,8 +19,8 @@ Currently the default is the Node type. The documenation does explain that a pro
 ## The Common Error
 One error I often see from the VS Code extension is when I right-click a workflow and select "Open designer":
 
-![error](../images/la-project-root/error-project-root.jpeg)
+![error](/images/la-project-root/error-project-root.jpeg)
 
 Through trial and error, I discovered that the extension will present this error if the extension does not find a "local.settings.json" file in the parent folder of your logic app workflow. Below is an example folder structure. My workflows are contained in the folders named: ApimOneWay, ApimTwoWay, RunBRE, StubSatellite, StubSatelliteWaste
 
-![error](../images/la-project-root/folders.png)
+![error](/images/la-project-root/folders.png)
