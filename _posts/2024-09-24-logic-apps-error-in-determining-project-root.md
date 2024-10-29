@@ -32,4 +32,4 @@ Below is an example folder structure. My workflows are contained in the folders 
 
 ![error](/images/la-project-root/folders.png)
 
-Worth noting that if you create a logic app standard workflow from scratch by using the Azure VS Code extension, then the missing file should be created for you.
+Worth noting that if you create a logic app standard workflow from scratch by using the Azure VS Code extension, then the missing files should be created for you.
