@@ -21,6 +21,15 @@ One error I often see from the VS Code extension is when I right-click a workflo
 
 ![error](/images/la-project-root/error-project-root.jpeg)
 
-Through trial and error, I discovered that the extension will present this error if the extension does not find a "local.settings.json" file in the parent folder of your logic app workflow. Below is an example folder structure. My workflows are contained in the folders named: ApimOneWay, ApimTwoWay, RunBRE, StubSatellite, StubSatelliteWaste
+Through trial and error, I discovered that the extension will present this error if the extension does not find the following files in the parent folder of your logic app workflow:
+
++ local.settings.json
++ host.json
+
+The LogicApp folder should also contain  .vscode folder with files for the extension and settings etc.
+
+Below is an example folder structure. My workflows are contained in the folders named: ApimOneWay, ApimTwoWay, RunBRE, StubSatellite, StubSatelliteWaste
 
 ![error](/images/la-project-root/folders.png)
+
+Worth noting that if you create a logic app standard workflow from scratch by using the Azure VS Code extension, then the missing file should be created for you.
