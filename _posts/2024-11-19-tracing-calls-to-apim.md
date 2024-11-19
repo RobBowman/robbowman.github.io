@@ -1,5 +1,5 @@
 ---
-title: The Dreaded "Tracing Calls to APIM"
+title: Tracing Calls to APIM from 2024
 category: Azure
 tags:
     - APIM
@@ -13,10 +13,10 @@ This would result in a response header containing a url that linked to a page of
 
 Unfortunately, this must have been too useful to the bad guys because since November 2024, this capability has been disabled.
 
-## Microsoft Guidence 
-The official guidence on the new technique to be used for APIM tracing can be found [here](https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-api-inspector). You can see that use of the Azure Portal is recommended, however, I have found this often to be inoperable. I navigate to the Test tab and I'm presented with an ever cycling load animation. Do others get he same?
+## Microsoft Guidance 
+The official guidance on the new technique to be used for APIM tracing can be found [here](https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-api-inspector). You can see that use of the Azure Portal is recommended, however, I have found this often to be inoperable. I navigate to the Test tab and I'm presented with an ever cycling load animation. Do others get the same?
 
-You'll notice that further down the page, Microsoft also give guidence on how tracing can be enabled for external API requests, however this is now more complicated, and requires token acquisition. Fortunately, it can be automated to be alsmost as easy as before. 
+You'll notice that further down the page, Microsoft also give guidance on how tracing can be enabled for external API requests, however this is now more complicated, and requires token acquisition. Fortunately, it can be automated to be almost as easy as before. 
 
 ## Automating with VS Code Extension
 The excellent [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) VS Code extension was a big help in streamlining requests to apim in a way that can be followed up with a request for trace details. A three step process is required:
@@ -27,7 +27,7 @@ The excellent [REST Client](https://marketplace.visualstudio.com/items?itemName=
 
 You can find a script for this below, simply save with a .http extension, open in VS Code with the REST Client extension installed and you should be able to click links above the three POST requests.
 
-```
+```http
 @subscriptionId = ab34e8cf-8877-4385-acaa-xxxxxxxxxxxx
 @resourceGroup = rg-sandpit
 @apimServiceName = apim-biztalkers-consumption
