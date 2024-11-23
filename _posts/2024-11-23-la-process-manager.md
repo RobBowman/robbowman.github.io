@@ -42,7 +42,7 @@ The key actions of the Process Manager Logic App Standard workflow can be seen b
 ![workflow](/images/la-process-manager/procman-la.png)
 
 # The Local Function
-I mentioned in the previous section, it's not currently possible to use a logic app standard workflow action to receive an in-session message from service bus queue. It seems that it can be done, but only if the workflow was triggered by a session aware service bus trigger. In my case, it must be possible to trigger the Process Manager workflow via http because its clients include webforms that are awaiting a response.
+I mentioned in the previous section, it's not currently possible to use a logic app standard workflow action to receive an in-session message from service bus queue. It seems that it can be done, but only if the workflow was triggered by a session aware service bus trigger, see [this post from Microsoft](https://techcommunity.microsoft.com/blog/integrationsonazureblog/session-support-for-service-bus-built-in-connector-logic-apps-standard/4034074/replies/4219967#M1214). In my case, it must be possible to trigger the Process Manager workflow via http because its clients include webforms that are awaiting a response.
 
 So, a work-around had to be found. Fortunately, Microsoft had recently introduced local functions to Logic Apps Standard, and I was able to easily create one that could consume the response and make available to the workflow. The local functions have the benefit of running in the same process as workflow, without the extra security and performance baggage of calling to an external Azure Function App.
 
