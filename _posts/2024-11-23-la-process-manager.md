@@ -13,6 +13,8 @@ The [Process Manager](https://www.enterpriseintegrationpatterns.com/patterns/mes
 
 The simple diagram above taken from the excellent [Enterprise Integration Patterns Website](https://www.enterpriseintegrationpatterns.com/) shows the process manager coordinating calls to A, B and C in sequence. However, these could just as well be A, C, B or A, C, A etc.
 
+Mike Stephenson has a nice blog post about the benefits of Process Manager and Logic Apps [here](https://mikestephenson.me/2023/02/28/do-i-daisy-chain-logic-apps-or-implement-a-process-manager-to-orchestrate-my-logic-apps/).
+
 ## BizTalk Migration
 I'd bumped into this requirement as part of work to migrate an existing suite of BizTalk soltutions that made extensive use of the Process Manager pattern.
 
