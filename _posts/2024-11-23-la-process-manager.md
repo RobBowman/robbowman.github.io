@@ -9,7 +9,7 @@ tags:
 ## Overview
 The [Process Manager](https://www.enterpriseintegrationpatterns.com/patterns/messaging/ProcessManager.html) is an Enterprise Integration Pattern to maintain the state of sequence and determine the next processing step based on intermediate results.
 
-![simple](../images/la-process-manager/simple.gif)
+![simple](/images/la-process-manager/simple.gif)
 
 The simple diagram above taken from the excellent [Enterprise Integration Patterns Website](https://www.enterpriseintegrationpatterns.com/) shows the process manager coordinating calls to A, B and C in sequence. However, these could just as well be A, C, B or A, C, A etc.
 
@@ -18,7 +18,7 @@ I'd bumped into this requirement as part of work to migrate an existing suite of
 
 In the BizTalk solution, the key logic of the Process Manager is implemented as an Orchestration named Gatekeeper, as shown below:
 
-![gatekeeper](../images/la-process-manager/gatekeeper.png)
+![gatekeeper](/images/la-process-manager/gatekeeper.png)
 
 Upon receipt of the Trigger Message, the orchestration published to a logical request response port. This is consumed by a worker (Proc A, B, C etc) which then responds with a result message. The Gatekeeper will loop in this process until it decides no further work is required.
 
@@ -27,7 +27,7 @@ The most significant change when converting this capability to Logic Apps Standa
 ## Logic Apps Standard Implementation
 The following diagram illustrates how the Process Manager was implemented:
 
-![outline-flow](../images/la-process-manager/outline-flow.png)
+![outline-flow](/images/la-process-manager/outline-flow.png)
 
 + On receipt of the trigger message, the requested operation is parsed from the json payload.
 + A new session id is created
@@ -39,7 +39,7 @@ The following diagram illustrates how the Process Manager was implemented:
 
 The key actions of the Process Manager Logic App Standard workflow can be seen below:
 
-![workflow](../images/la-process-manager/procman-la.png)
+![workflow](/images/la-process-manager/procman-la.png)
 
 # The Local Function
 I mentioned in the previous section, it's not currently possible to use a logic app standard workflow action to receive an in-session message from service bus queue. It seems that it can be done, but only if the workflow was triggered by a session aware service bus trigger. In my case, it must be possible to trigger the Process Manager workflow via http because its clients include webforms that are awaiting a response.
