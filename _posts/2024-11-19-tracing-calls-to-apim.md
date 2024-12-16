@@ -27,7 +27,7 @@ The excellent [REST Client](https://marketplace.visualstudio.com/items?itemName=
 
 You can find a script for this below, simply save with a .http extension, open in VS Code with the REST Client extension installed and you should be able to click links above the three POST requests.
 
-```http
+```
 @subscriptionId = ab34e8cf-8877-4385-acaa-xxxxxxxxxxxx
 @resourceGroup = rg-sandpit
 @apimServiceName = apim-biztalkers-consumption
