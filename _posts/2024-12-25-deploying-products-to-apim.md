@@ -7,7 +7,7 @@ tags:
 ---
 
 ## Overview
-My standard method of deploying into Azure is to run a Bicep template from a DevOps pipeline. I have found the declarative "desired state" approach of Bicep to work better than the more imperical PowerShell scripting I'd used previously.
+My standard method of deploying into Azure is to run a Bicep template from a DevOps pipeline. I have found the declarative "desired state" approach of Bicep to work better than the more imperative PowerShell scripting I'd used previously.
 
 However, there are occassions where I find it makes sense to fall back to the older method and I encountered one this week in relation to deployment of resources into API Management.
 
@@ -19,7 +19,7 @@ The Bicep template would read from an array of configuration data as shown below
 ```
 var apimSubscriptions = [
     {
-        name: 'Subsciption1'
+        name: 'Subscription'
         description: 'Description for sub1'
         apis: [
             'name-of-api1-for-sub1_v1'
@@ -27,7 +27,7 @@ var apimSubscriptions = [
         ]
     }
     {
-        name: 'Subsciption2'
+        name: 'Subscription2'
         description: 'Description for sub2'
         apis: [
             'name-of-api1-for-sub2_v1'
@@ -173,7 +173,7 @@ foreach ($subscription in $apimSubscriptions) {
  {
   "apimSubscriptions": [
     {
-      "name": "Subsciption1",
+      "name": "Subscription",
       "description": "Description for sub1",
       "apis": [
         "name-of-api1-for-sub1_v1",
@@ -181,7 +181,7 @@ foreach ($subscription in $apimSubscriptions) {
       ]
     },
     {
-      "name": "Subsciption2",
+      "name": "Subscription2",
       "description": "Description for sub2",
       "apis": [
         "name-of-api1-for-sub2_v1",
