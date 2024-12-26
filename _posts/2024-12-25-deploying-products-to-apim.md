@@ -169,6 +169,7 @@ foreach ($subscription in $apimSubscriptions) {
  ```
 
 ### Sample Json Config File
+Filename: ApimProductApis.json
  ```json
  {
   "apimSubscriptions": [
@@ -191,9 +192,9 @@ foreach ($subscription in $apimSubscriptions) {
   ]
 }
  ```
-#### ApimProductApis.json
 
 ### Sample Policy Xml File - to be applied at Product scope
+Filename: Subscription1.xml
  ```xml
  <policies>
     <inbound>
@@ -211,4 +212,3 @@ foreach ($subscription in $apimSubscriptions) {
     </on-error>
 </policies>
  ```
-#### Subscription1.xml
