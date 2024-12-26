@@ -9,7 +9,7 @@ tags:
 ## Overview
 My standard method of deploying into Azure is to run a Bicep template from a DevOps pipeline. I have found the declarative "desired state" approach of Bicep to work better than the more imperative PowerShell scripting I'd used previously.
 
-However, there are occassions where I find it makes sense to fall back to the older method and I encountered one this week in relation to deployment of resources into API Management.
+However, there are occasions where I find it makes sense to fall back to the older method and I encountered one this week in relation to deployment of resources into API Management.
 
 ## The Problem with Bicep
 The issue related to linking of API Management Products to APIs within the APIM instance. 
@@ -66,7 +66,7 @@ The problem was, it would occassionally come accross the definition of a subscri
  Deployment of the APIM Product to API links needed to be made more flexible. It needed to attempt to make the link but continue if it was unable to.
 
 ## The solution
- The following PowerShell script is called from the same DevOps pipleline as the previous Bicep:
+ The following PowerShell script is called from the same DevOps pipeline as the previous Bicep:
 
  ```ps
  # This script it called from DevOps Pipeline Azure.Scaffolding.ApimSubscriptions
