@@ -65,7 +65,7 @@ The problem was, it would occassionally come accross the definition of a subscri
 
  Deployment of the APIM Product to API links needed to be made more flexible. It needed to attempt to make the link but continue if it was unable to.
 
- ## The solution
+## The solution
  The following PowerShell script is called from the same DevOps pipleline as the previous Bicep:
 
  ```ps
@@ -92,7 +92,7 @@ The problem was, it would occassionally come accross the definition of a subscri
 param (
     [string]$apimName = "apim name",
     [string]$resourceGroupName = "rg name",
-    [string]$jsonFilePath = "path to json config file",
+    [string]$jsonFilePath = "./scripts/ApimProductApis.json",
     [string]$subscriptionId = "your subscription id"
 )
 
@@ -168,7 +168,7 @@ foreach ($subscription in $apimSubscriptions) {
 }
  ```
 
- ### Sample Json Config File
+### Sample Json Config File
  ```json
  {
   "apimSubscriptions": [
@@ -190,5 +190,25 @@ foreach ($subscription in $apimSubscriptions) {
     }
   ]
 }
-
  ```
+ #### ApimProductApis.json
+
+ ### Sample Policy Xml File - to be applied at Product scope
+ ```xml
+ <policies>
+    <inbound>
+        <base />
+        <rate-limit calls="2000" renewal-period="60" />
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>
+ ```
+ #### Subscription1.xml
