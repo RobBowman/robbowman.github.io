@@ -191,9 +191,9 @@ foreach ($subscription in $apimSubscriptions) {
   ]
 }
  ```
- #### ApimProductApis.json
+#### ApimProductApis.json
 
- ### Sample Policy Xml File - to be applied at Product scope
+### Sample Policy Xml File - to be applied at Product scope
  ```xml
  <policies>
     <inbound>
@@ -211,4 +211,4 @@ foreach ($subscription in $apimSubscriptions) {
     </on-error>
 </policies>
  ```
- #### Subscription1.xml
+#### Subscription1.xml
