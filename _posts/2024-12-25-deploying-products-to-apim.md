@@ -109,13 +109,18 @@ foreach ($subscription in $apimSubscriptions) {
     $productNameLower = $productNameHyphen.ToLower()
     $productName = $subscription.name
 
+    # Sanitize the ProductId
+    $productId = $productNameLower -replace '[^a-z0-9-]', ''
+    $productId = $productId.Trim('-')
+
     # Check if the product exists
     $products = Get-AzApiManagementProduct -Context $apimContext | Where-Object { $_.Title -eq $productName -or $_.Title -eq $productNameLower }
     Write-Output "Products retrieved: $products"
 
     if ($null -eq $products) {
         # Create the product if it doesn't exist
-        $product = New-AzApiManagementProduct -Context $apimContext -ProductId $productName -DisplayName $productName -Description "Product for $($productName)"
+        $product = New-AzApiManagementProduct -Context $apimContext -Title $productName -ProductId $productId `
+            -Description "Product for $($productName)" -State "Published"
         Write-Output "Created product '$productName'"
     }
     else {
