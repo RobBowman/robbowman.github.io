@@ -26,7 +26,7 @@ Although we've not yet been able to identify root cause, Microsoft Support did s
 + re-run the bicep deployment template
 
 ## Using Managed Identity for the Function App to the Storage Account
-It seems that Microsoft are currently recommending using managed identity for the function app to storage account auth. I've found this to be difficult to get right. It seems that the implementation is a little half-baked at present. For example, although not documented anywhere, user assign managed identities don't work - the deployment will complete without error but no function host keys available.
+It seems that Microsoft are currently recommending using managed identity for the function app to storage account auth. I've found this to be difficult to get right. Note:I'd previously (July 2023) found that when deploying a function app with a user defined managerd identity, the host keys within the blob storage were never created. However, I've re tried this in January 2025 and this does now work ok with user defined managed identities.
 
 ## Problem with WEBSITE_RUN_FROM_PACKAGE
 During my investigations, I found that if the function app has the app setting  WEBSITE_RUN_FROM_PACKAGE set to 1 then the host keys will not be available until the function app's code has been deployed.
