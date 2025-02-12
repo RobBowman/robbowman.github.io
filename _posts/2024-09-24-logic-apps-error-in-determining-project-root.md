@@ -16,6 +16,8 @@ This [Microsoft Doc](https://learn.microsoft.com/en-us/azure/logic-apps/create-s
 
 Currently the default is the Node type. The documenation does explain that a project type can be converted to a .Net package based project quite easily and gives one reason for this as to support built-in connector authoring. It doesn't offer any downsides to the conversion, so I wonder why this is not offered as the only project format - as a means to greatly reduce confusion.
 
+In practice, I've had less trouble sticking with the default project type.
+
 ## The Common Error
 One error I often see from the VS Code extension is when I right-click a workflow and select "Open designer":
 
@@ -33,3 +35,51 @@ Below is an example folder structure. My workflows are contained in the folders 
 ![error](/images/la-project-root/folders.png)
 
 Worth noting that if you create a logic app standard workflow from scratch by using the Azure VS Code extension, then the missing files should be created for you.
+
+## Workspace File to the Rescue
+It seems the problems can be overcme by adding a workspace file. From within vscode explorer, select the folder containing your logic app workflows then from the File menu select, "Add Folder to Workspace...". This will create a ".code-workspace" file something like the following:
+
+```json
+{
+  "folders": [
+    {
+      "name": "Functions",
+      "path": "./src/Function"
+    },
+    {
+      "name": "LogicApp",
+      "path": "./src/LogicApp"
+    },
+    {
+      "name": "Deploy",
+      "path": "./deploy"
+    },
+    {
+      "name": "Tests",
+      "path": "./tests"
+    },
+    {
+      "name": "IntegrationTests",
+      "path": "./tests/LCC.Integration.ProcessManager.IntegrationTests"
+    }
+  ],
+  "settings": {
+    "terminal.integrated.env.windows": {
+      "PATH": "C:\\Users\\rob\\.azurelogicapps\\dependencies\\DotNetSDK;${env:PATH}"
+    },
+    "omnisharp.dotNetCliPaths": [
+      "C:\\Users\\rob\\.azurelogicapps\\dependencies\\DotNetSDK"
+    ],
+    "azurite.location": "C:\\Users\\rob\\.azurelogicapps\\.azurite",
+    "terminal.integrated.cwd": "${workspaceFolder:LogicApp}",
+    "terminal.integrated.env.osx": {
+      "PATH": "/Users/rob/.azurelogicapps/dependencies/DotNetSDK:${env:PATH}"
+    },
+    "powershell.cwd": "Functions"
+  }
+}
+```
+
+Now choose File\Open Workspace From File
+
+You should then be able to right-click a workflow.json file and chooose "open designer".
