@@ -1,9 +1,9 @@
 ---
-title: Deploying Products to Azure API Management
-category: Azure
+title: Testing SOAP Web Services Using REST Test Tools
+category: REST
 tags:
-    - Azure
-    - APIM
+    - Web Services
+    - SOAP
 ---
 
 
