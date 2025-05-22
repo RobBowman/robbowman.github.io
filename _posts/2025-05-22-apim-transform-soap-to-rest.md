@@ -16,7 +16,6 @@ I needed to decommission the legacy SOAP email service. I also wanted to minimis
 -  composed json payload required by new REST service
 -  called the REST service
 -  converted response from REST service into XML response for the SOAP client
--  
 
 # Implementation
 
