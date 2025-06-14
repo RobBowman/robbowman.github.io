@@ -1,6 +1,6 @@
 ---
 title: Thoughts from Integrate 2025 Conference
-date: 2025-14-07
+date: 2025-07-14
 excerpt: |
     A summary of the key takeaways from the Integrate 2025 conference, focusing on API Management, integration patterns, and the future of cloud-based services.
 tags:
