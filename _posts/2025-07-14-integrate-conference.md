@@ -12,7 +12,7 @@ categories:
 
 # Another Excellent Integrate Conference
 
-![photo of conference badges](../images/integrate-2025/integrate-badges.png)
+![photo of conference badges](/images/integrate-2025/integrate-badges.png)
 
 June 9th and 10th and another trip to London for the Integrate conference. This year I was accompanied by my son Tom who has recently joined with BizTalkers on a degree apprenticeship. 
 
@@ -26,4 +26,4 @@ Another highlight for me was the session by [Toon Vanhoutte](https://yourazureco
 
 I'd also like to thank our friends at [ARRT](https://arrt.uk.com/) and [Affinus](https://www.affinus.com/) for making Tom so welcome on his first conference. 
 
-![](../images/integrate-2025/all-attendees.png)
+![](/images/integrate-2025/all-attendees.png)
