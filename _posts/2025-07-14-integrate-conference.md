@@ -1,6 +1,6 @@
 ---
 title: Thoughts from Integrate 2025 Conference
-date: 2025-07-14
+date: 2025-06-14
 excerpt: |
     A summary of the key takeaways from the Integrate 2025 conference, focusing on API Management, integration patterns, and the future of cloud-based services.
 tags:
@@ -24,6 +24,6 @@ Stephen has provided details guidance of how to replicate this demo on his [blog
 
 Another highlight for me was the session by [Toon Vanhoutte](https://yourazurecoach.com/2025/06/10/looking-back-at-integrate-2025/). I always enjoy Toon’s sessions and this one was no exception. He shared his real-world experience, using Azure to develop a solution to improve custom support for a company that supplier pallet boilers. 
 
-I'd also like to thank our friends and conference sponsor [Affinus](https://www.affinus.com/) for making Tom so welcome on his first conference. 
+I'd also like to thank our friends at [ARRT](https://arrt.uk.com/) and [Affinus](https://www.affinus.com/) for making Tom so welcome on his first conference. 
 
 ![](../images/integrate-2025/all-attendees.png)
