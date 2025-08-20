@@ -8,7 +8,7 @@ categories:
   - Logic Apps
 ---
 
-![architecture](/images/logic-app-on-prem-files/la-direct-on-prem-files-on-prem-files.drawio.png)
+
 
 # Goodbye (good riddance) to the On‑Prem Data Gateway (OPDG)
 
@@ -20,33 +20,6 @@ Why this matters:
 - Cost clarity — built‑in actions run on your App Service Plan. Managed connectors are metered per action call and add an API connection resource.
 
 ## Managed vs built‑in: how they differ
-
-```mermaid
-flowchart LR
-  subgraph Azure
-    LA[Logic App Standard]
-    VNET[VNET Integration]
-    APIConn[(API Connection\nresource)]
-  end
-
-  subgraph OnPrem[On‑premises]
-    SMB[(Windows SMB\nFile Share)]
-    OPDG[On‑Prem\nData Gateway]
-  end
-
-  %% Managed connector path
-  LA -- Managed FS action --> APIConn
-  APIConn -- Uses --> OPDG
-  OPDG -- SMB over 445 --> SMB
-
-  %% Built-in connector path
-  LA -- Built‑in FS action --> LA
-  LA -- Private network path --> VNET
-  VNET -- SMB over 445 --> SMB
-
-  classDef dim fill:#f6f8fa,stroke:#c0c0c0,color:#666;
-  class APIConn,OPDG dim;
-```
 
 Key differences:
 - Managed connector
@@ -67,6 +40,8 @@ From the Microsoft reference for the built‑in File System connector:
 - Expects FQDN in the root folder path; supports Windows file systems; mapped network drives aren’t supported; and the built‑in connector has a limit of up to 20 connections per Logic App resource. See “File System built‑in connector” docs.
 
 > Note: App‑level storage mounts (such as App Service “Azure Storage” mounts under `azureStorageAccounts`) are not required for the built‑in File System connector. Some teams still use mounts for other scenarios, but the built‑in connector itself can authenticate and access the UNC path directly when the network path is reachable.
+
+![architecture](/images/logic-app-on-prem-files/la-direct-on-prem-files-on-prem-files.drawio.png)
 
 ## Prerequisites and network checklist
 
@@ -96,10 +71,6 @@ Limitations and tips (from the docs):
 - Up to 20 connections per Logic App resource; no duplicate root paths with different credentials
 - Prefer FQDN over short names
 
-## Deployment notes (what we changed in this repo)
-
-We deploy the Logic App Standard with Bicep and then zip‑deploy the workflows. A recent pipeline failure showed `ResourceNotFound` for the site at the moment we pushed a site config block. The fix was to add an explicit dependency so the site config waits for the app to exist before creation. In other words: create the app first, then apply any site config (mounts), then deploy workflows.
-
 ## Why we prefer the built‑in connector
 
 - Transparency: Source/destination paths and credentials are right in the connection you see in the workflow designer.
@@ -107,6 +78,8 @@ We deploy the Logic App Standard with Bicep and then zip‑deploy the workflows.
 - Predictable cost: Runs on your App Service Plan compute rather than per‑action managed connector billing.
 
 ## References
+
+- Great blog post from Tim D'haeyer: https://zure.com/blog/bridging-the-gap-azure-logic-apps-meets-on-prem-fileshares/
 
 - Built‑in File System connector reference (Standard): https://learn.microsoft.com/azure/logic-apps/connectors/built-in/reference/filesystem/
 - “Connect to on‑premises file systems from workflows” overview: https://learn.microsoft.com/azure/connectors/file-system
