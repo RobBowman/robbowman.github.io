@@ -8,6 +8,8 @@ categories:
   - Logic Apps
 ---
 
+![architecture](/images/logic-app-on-prem-files/la-direct-on-prem-files-on-prem-files.drawio.png)
+
 # Goodbye (good riddance) to the On‑Prem Data Gateway (OPDG)
 
 Logic App Standard workflows can use either managed or built‑in connectors. Historically, if you needed to access an on‑prem Windows file share, you had to use the File System managed connector with the OPDG — unless you were running in ASEv3. That guidance is now out of date: the built‑in File System connector works on Logic App Standard when the app is VNET‑integrated, without OPDG.
