@@ -71,11 +71,22 @@ Limitations and tips (from the docs):
 - Up to 20 connections per Logic App resource; no duplicate root paths with different credentials
 - Prefer FQDN over short names
 
-## Why we prefer the built‑in connector
+## Why we prefer the built‑in connector over the on-premises data gateway
 
 - Transparency: Source/destination paths and credentials are right in the connection you see in the workflow designer.
 - Simpler ops: No separate API connection resource; no OPDG to install/maintain.
 - Predictable cost: Runs on your App Service Plan compute rather than per‑action managed connector billing.
+
+## Deployment Woes
+After studying the blog posts and video found in the references section of this post, I was able to configure a working PoC solution via the Azure Portal quite quickly. However, promoting this to a slick DevOps process was a major struggle!
+
+The reason for this is that during deployment the logic app will attempt to reach its storage account. In order for smb file share mapping to work, the storage account needs to be private. This means that an A record for the ip address of the storage account is required in a private dns zone.
+
+I hit a problem with sequencing which I was able to overvcome using the following:
+
+1. The resources pipeline ran and created the private storage account that was open to external connections
+2. The logic app pipeline ran to deloy the logic app the the workflows zip
+3. The above pipeline then updated the config of the storage account to limit access to only connections from the private endpoint
 
 ## References
 
