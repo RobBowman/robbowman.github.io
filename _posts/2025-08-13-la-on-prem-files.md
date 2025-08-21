@@ -79,11 +79,11 @@ Limitations and tips (from the docs):
 
 ## References
 
-- Great blog post from Tim D'haeyer: https://zure.com/blog/bridging-the-gap-azure-logic-apps-meets-on-prem-fileshares/
+- Great blog post from Tim D'haeyer: [Bridging the gap: Azure Logic Apps meets on-prem fileshares](https://zure.com/blog/bridging-the-gap-azure-logic-apps-meets-on-prem-fileshares/)
 
-- Built‑in File System connector reference (Standard): https://learn.microsoft.com/azure/logic-apps/connectors/built-in/reference/filesystem/
-- “Connect to on‑premises file systems from workflows” overview: https://learn.microsoft.com/azure/connectors/file-system
+- [Built‑in File System connector reference (Standard)](https://learn.microsoft.com/azure/logic-apps/connectors/built-in/reference/filesystem/)
+- ["Connect to on‑premises file systems from workflows" overview](https://learn.microsoft.com/azure/connectors/file-system)
 - Community updates confirming support on Logic App Standard with VNET (no ASEv3 required):
-  - Using File System connector in Logic Apps Standard (original guidance mentioning ASEv3): https://techcommunity.microsoft.com/blog/integrationsonazureblog/using-file-system-connector-in-logic-apps-standard/3711426
-  - File Systems connector support on Workflow Standard plans (update): https://techcommunity.microsoft.com/blog/integrationsonazureblog/file-systems-connector-support-on-workflow-standard-plans/4093382
+  - [Using File System connector in Logic Apps Standard (original guidance mentioning ASEv3)](https://techcommunity.microsoft.com/blog/integrationsonazureblog/using-file-system-connector-in-logic-apps-standard/3711426)
+  - [File Systems connector support on Workflow Standard plans (update)](https://techcommunity.microsoft.com/blog/integrationsonazureblog/file-systems-connector-support-on-workflow-standard-plans/4093382)
 
