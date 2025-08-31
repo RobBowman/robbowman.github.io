@@ -8,8 +8,8 @@ categories:
   - WCF
 ---
 
-# A Reminder for Next Time
-I was able to provide a pragmatic authorisation problem with week and though it worth documenting while I sit waiing for an AA recovery.
+# A Win for WCF Configuration
+I was able to provide a pragmatic authorisation problem with week and thought it worth documenting.
 
 # Scenario
 We have an existing on-prem WCF service that was previously called by BizTalk. The service endpoint was http (port only) with no authentication. We wanted to make the service available to an Azure Function app but tighten up on the security.
