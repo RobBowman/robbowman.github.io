@@ -19,7 +19,7 @@ This has now been enhanced to give a single endpoint that:
  - authenticates to ensure request is made by a specific Windows service account
 
 To achieve this, changes have been made to the WCF Server
-##### Changes to CCM WCF Server
+##### Changes to WCF Server
 The available binding was changed to give a single option that demands Transport security:
 
 ```xml
@@ -47,7 +47,7 @@ Authentication and authorization elements were introduced:
 </system.web>
 ```
 
-I think the ability to configure authentication and authorisation so simply is quite neat. This is saying I'll let you in only if you provide credentails fo the giving domain user.
+I think the ability to configure authentication and authorisation so simply is quite neat. This is saying, "I'll let you in only if you provide credentails for the given domain user".
 
 ##### Client Configuration
 
